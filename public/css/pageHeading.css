@@ -1,0 +1,22 @@
+.page-heading-section{
+    padding: 70px 0;
+    position: relative;
+    overflow: hidden;
+
+}
+.page-heading-section::before{
+    content: url(../Images/SecondSlide.jpg);
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    right: -3%;
+    object-fit: cover;
+    object-position: center center;
+    filter: blur(3px) brightness(40%);
+}
+.page-heading{
+    position: relative;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}

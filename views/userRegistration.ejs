@@ -1,0 +1,39 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"",donateState:"",aboutState:"",user:"",renderLogout:false}) -%>
+    <%- include("partials/pageHeading", {pageHeading: "User Registration"}) -%>
+    <section class="user-registration-section">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 user-registration-column">
+                    <form action="/register-user" method="POST" enctype="multipart/form-data" id="user_registraion_form">
+                        <div class="form-group">
+                            <label  for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name"  placeholder="Enter full name">
+                          </div>
+                          <div class="form-group">
+                            <label for="profile-photo">Profile Photo</label>
+                            <input type="file" class="form-control" id="profilePic" name="profilePic">
+                          </div>
+                          <div class="form-group">
+                            <label for="sign-in-email">Email Id</label>
+                            <input type="email" class="form-control" id="sign-in-email" name="sign_in_email" placeholder="Enter email id">
+                          </div>
+                          <div class="form-group">
+                            <label for="sign-in-password">Password</label>
+                            <input type="password" class="form-control" id="sign-in-password" name="sign_in_password" placeholder="Password">
+                          </div>
+                          <div class="form-group">
+                            <label for="sign-in-confirm-password">Confirm Password</label>
+                            <input type="password" class="form-control" id="sign-in-confirm-password" name="sign_in_confirm_password" placeholder="Confirm Password">
+                          </div>
+                          <div class="sign-in-btn-div text-center">
+                            <button type="submit" class="register-btn">Register</button>
+                          </div>
+                    </form>
+                    <h6 class="text-center mt-2">OR</h6>
+                    <h6 class="text-center mt-2">Already have an account ? <a class="sign-in-link" href="/sign-in">Sign In</a></h6>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include("partials/footer") -%>

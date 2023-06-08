@@ -1,0 +1,151 @@
+/* ------------------------------------ Article css --------------------------------------- */
+.single-article-section{
+    padding: 70px 0;
+}
+.single-article-heading{
+    text-align: center;
+    font-weight: 700;
+}
+.single-article-author{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.single-article-img-div{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.single-article-img{
+    height: 100%;
+}
+.single-article-content-column{
+    position: relative;
+    padding: 40px!important;
+}
+.single-article-content-column::before{
+    content: "";
+    position: absolute;
+    top: -150px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: 3px solid var(--Grey);  
+    z-index: -1;
+    border-radius: 30px;
+}
+.single-article-para{
+    margin-top: 20px;
+}
+.donate-btn{
+    padding: 10px 30px;
+    background: var(--Yellow);
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ------------------------------------ Discussion css  ------------------------------------------ */
+.discussion-section{
+    padding: 70px 0;
+    background: rgb(245, 245, 245);
+}
+.discussion-heading{
+    text-transform: uppercase;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.profile-img-div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-img{
+    height: 100%;
+}
+
+
+.user-name{
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.comment-div,.replies-div{
+    position: relative;
+    margin-bottom: 50px;
+}
+.comment-box,.reply-box{
+    padding: 20px;
+    padding-bottom: 40px;
+    background: var(--Grey)!important;
+    border-radius: 20px;
+    width: 100%;
+    border: none;
+}
+.reply-popup-box{
+    display: none;
+    position: relative;
+}
+.reply-popup-box.show{
+    display: block;
+    bottom: -100%;
+}
+
+.post-comment-btn{
+    position: absolute;
+    bottom: -16px;
+    right: 20px;
+    background: var(--Green);
+    padding: 10px 30px;
+    color: white;
+    border-radius: 50px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.vote-connect-div{
+    position: absolute;
+    bottom: -16px;
+    left: 20px;
+}
+.vote-btn,.connect-btn{
+    margin-right: 3px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: grey;
+    cursor: pointer;
+}
+.vote-btn.clicked,
+.connect-btn.clicked{
+    background: var(--Green);
+}
+
+.reply-btn{
+    position: absolute;
+    bottom: -16px;
+    right: 20px;
+    background: var(--Black);
+    padding: 10px 30px;
+    color: white;
+    border-radius: 50px;
+    z-index: 2;
+    cursor: pointer;
+}
+.show-votes{
+    position: absolute;
+    bottom: -36px;
+    left: 30px;
+    font-weight: 600;
+}

@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"",donateState:"active-item",aboutState:"",user:user,renderLogout:renderLogout}) -%>
+    <%- include("partials/pageHeading",{pageHeading: "Organisation to Donate"}) -%>
+    <section class="org-reg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h5 class="mb-2">Want to reach out for collectiing Donation !!</h5>
+                    <h5>Register your organisation with us</h5>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                    <a href="/register-organisation"><button class="org-reg-btn">Register Now</button></a>
+                </div>
+            </div>
+            <hr class="my-3">
+        </div>
+    </section>
+    
+    <section class="org-list-section">
+        <div class="container">
+            <% orgList.forEach((organisation)=>{  %>
+                <div class="row org-row">
+                    <div class="col-4 d-flex justify-content-center">
+                        <div class="org-logo-div">
+                            <img src="data:organisation/<%=organisation.image.contentType%>;base64,<%=organisation.image.img.toString('base64')%>" alt="" class="org-logo">
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <h3><%= organisation.name %></h3>
+                        <p><%= organisation.cause.substring(0,300); %></p>
+                        <a href="/donate/<%= organisation._id %>"><button class="green-btn">Donate</button></a>
+                    </div>
+                </div>
+            <%})                                   %>
+        </div>
+    </section>
+<%- include("partials/footer") %>
+     

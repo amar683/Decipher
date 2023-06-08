@@ -1,0 +1,25 @@
+.connections-section{
+    padding: 70px 0;
+}
+.green-btn{
+    padding: 10px 30px;
+    color: white;
+    background: var(--Green);
+    width: 150px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.yellow-btn{
+    padding: 10px 30px;
+    background: var(--Yellow);
+    width: 150px;
+    font-weight:500;
+    cursor: pointer;
+}
+.chat-btn{
+    padding: 10px 30px;
+    background: var(--Grey);
+    width: 150px;
+    font-weight:500;
+    cursor: pointer;
+}

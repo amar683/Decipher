@@ -1,0 +1,86 @@
+
+<% allComments.comments.forEach((userComment,cindex)=>{         %>
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="col-2 d-flex justify-content-end">
+            <div class="profile-img-div">
+                <img src="data:userComment/<%=userComment.image.contentType%>;base64,<%=userComment.image.img.toString('base64')%>" alt="" class="profile-img">
+            </div>
+        </div>
+        <div class="col-8">
+            <h6 class="user-name"><%= userComment.userName %></h6>
+            <div class="comment-div">
+                <p class="comment-box"><%= userComment.comment %></p>
+                <div class="vote-connect-div d-flex">
+                    <form action="/comment/like/<%= userComment._id %>" method="POST">
+                        <% let renderLike = false; %>
+                        <%if(allLikes.length !== 0){                                               %>
+                            <%allLikes.forEach((like)=>{                                           %>
+                                <%if(like.commentId == userComment._id && renderLogout){ renderLike = true;        %>
+                                      <button type="submit" class="vote-btn clicked" data-boxType="Like" data-id="<%= cindex %>"><i class="fa fa-thumbs-up"></i></button>
+                                 <%}                                                                %>
+                              <%})                                                                  %> 
+                          <%}if(renderLike == false){                                               %>
+                                <button type="submit" class="vote-btn" data-boxType="Like" data-id="<%= cindex %>"><i class="fa fa-thumbs-up"></i></button>
+                          <%}                                                                       %>
+                    </form>
+                    <form action="/connections/request/to/<%= userComment.userId %>" method="POST">
+                        <button type="submit" class="connect-btn" ><i class="fa fa-user-plus"></i></button>
+                    </form>
+                </div>
+                <button type="button" class="reply-btn" id="commentReplyBtnC<%= cindex %>" data-boxType="Comment" data-id="<%= cindex %>">Reply</button>
+                <small class="show-votes"><%= userComment.likes%> Votes</small>
+            </div>
+            <form action="/reply/to/<%= userComment._id %>/from/<%= user._id %>" method="POST">
+                <div class="reply-popup-box" id="replyBoxC<%= cindex %>" data-boxType="Comment" data-id="<%= cindex %>">
+                    <textarea class="comment-box mt-3" name="reply" rows="2"></textarea>
+                    <button type="submit" class="post-comment-btn">Post</button>
+                </div>
+            </form>
+        <%  allReplies.forEach((reply)=>{                                                           %>
+        <%      if(userComment._id == reply.commentId){                                             %>
+        <%          reply.replies.forEach((userReply,rindex)=>{                                     %>
+                        <div class="row mt-5">
+                            <div class="col-2 d-flex justify-content-end">
+                                <div class="profile-img-div">
+                                    <img src="data:userReply/<%=userReply.image.contentType%>;base64,<%=userReply.image.img.toString('base64')%>" alt="" class="profile-img">
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="user-name"><%= userReply.userName %></h6>
+                                <div class="replies-div">
+                                    <p class="reply-box"><%= userReply.reply %></p> 
+                                    <div class="vote-connect-div d-flex">
+                                        <form action="/reply/like/<%= userReply._id %>" method="POST">
+                                            <% let renderLike = false; %>
+                                            <%if(allLikes.length !== 0){                                             %>
+                                                <%allLikes.forEach((like)=>{                                         %>
+                                                    <%if(like.commentId == userReply._id && renderLogout){ renderLike = true;        %>
+                                                        <button type="submit" class="vote-btn clicked" data-boxType="Like" data-id="<%= rindex %>"><i class="fa fa-thumbs-up"></i></button>
+                                                    <%}                                                              %>
+                                                <%})                                                                 %> 
+                                            <%}if(renderLike == false){                                              %>
+                                                    <button type="submit" class="vote-btn" data-boxType="Like" data-id="<%= rindex %>"><i class="fa fa-thumbs-up"></i></button>
+                                            <%}                                                                      %>
+                                        </form>
+                                       <form action="/connections/request/to/<%= userReply.userId %>" method="POST">
+                                            <button type="submit" class="connect-btn"><i class="fa fa-user-plus"></i></button>
+                                       </form>
+                                    </div>
+                                    <button type="button" class="reply-btn" id="commentReplyBtnR<%= rindex %>"  data-boxType="Reply" data-id="<%= rindex %>">Reply</button>
+                                    <small class="show-votes"><%= userReply.likes%> Votes</small>
+                                </div>
+                                <form action="/reply/to/<%= userComment._id %>/from/<%= user._id %>" method="POST">
+                                    <div class="reply-popup-box" id="replyBoxR<%= rindex %>"  data-boxType="Reply" data-id="<%= rindex %>">
+                                        <textarea class="comment-box mt-3" name="reply" rows="2" ></textarea>
+                                        <button type="submit" class="post-comment-btn">Post</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+        <%          });                              %>
+        <%      }                                    %>
+        <%   });                                     %>
+        </div>
+    </div>
+    <hr/>
+<% });                                                %>

@@ -1,0 +1,24 @@
+.contact-top-section{
+    background: var(--Yellow);
+    padding: 40px 0;
+}
+
+.call-img-div{
+    width: 150px;
+    height: 150px;
+    /* border: 2px solid black; */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.call-img{
+    width: 100%;
+    filter: hue-rotate(55deg);
+}
+.address-img{
+    width: 100%;
+    filter: hue-rotate(40deg);
+}
+.contact-form-section{
+    padding: 70px;
+}

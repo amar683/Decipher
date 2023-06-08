@@ -1,0 +1,87 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"",donateState:"active-item",aboutState:"",user:"",renderLogout:false}) -%>
+    <section class="organisation-detail-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                </div>
+                <div class="col-7">
+                    <h1 class="page-heading text-left"><%= organisation.name %></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="organisation-detail-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="yellow-square-shape">
+                        <div class="row">
+                            <div class="col-12 d-flex flex-column justify-content-center align-items-center pt-4">
+                                <div class="org-logo-div">
+                                    <img src="data:organisation/<%=organisation.image.contentType%>;base64,<%=organisation.image.img.toString('base64')%>" alt="" class="org-logo-img">
+                                </div>
+                                <h5 class="text-center mt-4">For donating get in touch through</h5>
+                            </div>
+                        </div>
+                        <hr class="m-4">
+                        <div class="row pr-3 pl-4">
+                            <div class="col-5">
+                                <h6>Contact Number:</h6>
+                            </div>
+                            <div class="col-7">
+                                <h6><%= organisation.contact %></h6>
+                            </div>
+                        </div>
+                        <div class="row pr-3 pl-4">
+                            <div class="col-5">
+                                <h6>Vist Website:</h6>
+                            </div>
+                            <div class="col-7">
+                                <h6><%= organisation.website %></h6>
+                            </div>
+                        </div>
+                        <div class="row pr-3 pl-3">
+                            <div class="col-12 d-flex justify-content-center">
+                                <a class="contact-org-btn" href="mailto:<%= organisation.email %>">Contact via Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <h3>Work we do</h3>
+                    <p><%= organisation.cause %></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="org-gallery-section">
+        <div class="container">
+            <h2 class="text-center">Gallery</h2>
+            <div class="row pt-5">
+                <div class="col-5">
+                    <div class="org-gallery-img-div">
+                        <img class="org-gallery-img" src="/Images/1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="org-gallery-img-div">
+                        <img class="org-gallery-img" src="/Images/2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-4">
+                <div class="col-7">
+                    <div class="org-gallery-img-div">
+                        <img class="org-gallery-img" src="/Images/3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="org-gallery-img-div">
+                        <img class="org-gallery-img" src="/Images/4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include("partials/footer") -%>

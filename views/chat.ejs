@@ -1,0 +1,27 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"active-item",articleState:"",donateState:"",aboutState:"",user:user,renderLogout:renderLogout}) -%>
+    <section class="chat-section">
+        <div class="chat-heading-section mb-4">
+            <div class="container d-flex flex-column justify-content-center">
+                <div class="d-flex">
+                    <div class="profile-img-div mr-4">
+                        <img src="data:chatUser/<%=chatUser.image.contentType%>;base64,<%=chatUser.image.img.toString('base64')%>" alt="" class="profile-img">
+                    </div>
+                    <h3 class="chat-name-heading"><%= chatUser.name %></h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+           <div id="chat_display_div">
+            <%- include("partials/chatDisplay") %>
+           </div>
+            <form id="chat_form" data-chatRoomId = "<%= chatRoomId %>">
+                <div class="d-flex mb-5 mt-5">                                                   <!-- any uppercase letter in data-variable automatically become lowercase   -->
+                    <input class="form-control" type="text" id="chat_message" name="chat_message" data-currentuser = "<%=user._id%>" placeholder="Write message ....">
+                    <button class="send-message-btn" id="send_chat_message" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </section> 
+<%- include("partials/footer") %>
+     

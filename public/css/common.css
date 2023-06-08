@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --Green: #0F996D;
+    --Black: #202020;
+    --Grey: #C4C4C4;
+    --Lightgrey:rgb(243, 243, 243);
+    --Yellow: #FFCC2A;
+
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: var(--Green);
+    transition: 0.3s all ease;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: var(--Yellow);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: "Poppins","Montserrat";
+}
+*:focus{
+    border: none;
+    outline: none!important;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    background: none;
+}
+body.stop-scrolling{
+    height: 100vh;
+    overflow-y: hidden;
+}
+button{
+    border: none;
+    background: none;
+}
+li{
+    list-style: none;
+}
+a,a:hover,a:visited{
+    text-decoration: none!important;
+    color: white;
+}
+
+/* ------------------------------------------ Loader css ------------------------------ */
+.loader{
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.loader-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader-box h6{
+    position: absolute;
+    top: 45%;
+    animation: animateloader 1s infinite;
+}
+@keyframes animateloader{
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.loader.hide{
+    display: none;
+}
+
+/* ----------------------------------- Form css common for all  ---------------------------- */
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px!important;
+    position: relative;
+}
+.form-group *:focus{
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+.form-group label{
+    color: white;
+    background: var(--Black);
+    width: 50%;
+    padding: 10px 15px;
+    border-radius: 50px 0 0 50px;
+    text-align: center;
+    margin: 0;
+}
+.form-group label[class="error"]{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    font-size: 0.9rem;
+    background: none;
+    color: red;
+    width: 100%;
+    text-align: end;
+}
+
+.form-group input, .form-group select{
+    width: 100%;
+    padding: 10px 15px;
+    height: auto;
+    border-radius: 0 50px 50px 0;
+    border: 1px solid var(--Grey);
+    background: rgb(243, 243, 243);
+
+}
+
+.form-group input[type ="file"]{
+    font-size: 0.75rem;
+}
+.form-group textarea{
+    border-radius: 20px;
+    border: 1px solid var(--Grey);
+    background: rgb(243, 243, 243);
+}
+
+.form-group.full-label{
+    display: block;
+}
+.form-group.full-label label{
+    width: 100%;
+    border-radius: 50px;
+    margin-bottom: 40px;
+}
+
+.sign-in-btn,.register-btn,.publish-btn{
+    padding: 10px 30px;
+    background: var(--Yellow);
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.register-link,.sign-in-link{
+    color: var(--Black)!important;
+    font-weight: 700;
+}
+
+
+.write-article-btn-div{
+    position: sticky;
+    bottom: 30px;
+    right: 30px;
+    margin-bottom: 20px;
+}
+.write-article-btn i{
+    font-size: 4rem;
+    color: var(--Green);
+}
+.write-article-btn{
+    cursor: pointer;
+}

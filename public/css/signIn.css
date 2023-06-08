@@ -1,0 +1,89 @@
+.sign-in-section{
+    position: relative;
+    padding: 70px ;
+    overflow:hidden;
+    height: 100vh;
+}
+.sign-in-section::before{
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    width: 100%;
+    height: 100%;
+    content: url(../Images/FourthSlide.jpg);
+    object-fit: cover;
+    filter: blur(3px) brightness(40%);
+}
+
+.circle-logo-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle-logo-container{
+    padding-right: 50px;
+}
+.circle-logo{
+    width: 100%;
+}
+
+/* ------------------------------- Sign In Page Navbar   ----------------------------------- */
+.si-nav-container{
+   position: relative;
+    padding: 15px;
+}
+.si-nav-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: var(--Black);
+}
+.si-nav-container::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-bottom: 54.8px solid var(--Black);
+    border-left: 60px solid transparent;
+}
+.si-nav{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+.si-nav-item{
+    transition: 0.3s all ease;
+    position: relative;
+}
+
+.si-nav-link{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem 1rem!important;
+    transition: 0.8s all ease;
+    font-size: 1.05rem;
+}
+.si-nav-item:hover .si-nav-link{
+    font-weight: 600;
+    background: var(--Yellow);
+    color: var(--Black);
+}
+
+.sign-in-heading{
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+.sign-in-form{
+    margin: 70px 0;
+    padding: 30px;
+    background: var(--Grey);
+    border-radius: 20px;
+
+}
+
+

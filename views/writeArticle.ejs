@@ -1,0 +1,42 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"active-item",donateState:"",aboutState:"",user:user,renderLogout:true}) -%>
+    <%- include("partials/pageHeading", {pageHeading: "Write an Article"}) -%>
+    <section class="write-article-section">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 write-article-column">
+                    <form action="/write-article" method="POST" enctype="multipart/form-data" id="write-article-form">
+                        <div class="form-group">
+                            <label  for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title"  placeholder="Enter article title">
+                          </div>
+                          <div class="form-group">
+                            <label for="author">Author</label>
+                            <input type="text" class="form-control" id="author" name="author" placeholder="Enter author name">
+                          </div>
+                          <div class="form-group">
+                            <label for="article-pic">Article Image</label>
+                            <input type="file" class="form-control" id="articleImg" name="articleImg" placeholder="Upload photo">
+                          </div>
+                          <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" name="category">
+                                <option value="sports">Sports</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="politics">Politics</option>
+                                <option value="international">International</option>
+                              </select>
+                          </div>
+                          <div class="form-group full-label">
+                            <label for="content">Content</label>
+                            <textarea type="text" rows="20" class="form-control" id="content" name="content" placeholder="Write here......."></textarea>
+                          </div>
+                          <div class="sign-in-btn-div text-center">
+                            <button type="submit" class="publish-btn">Publish</button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include("partials/footer") -%>

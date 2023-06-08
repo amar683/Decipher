@@ -1,0 +1,82 @@
+
+/* ------------------------------------- About Us  ------------------------------------- */
+.about-us-section{
+    padding: 70px 0;
+}
+.about-us-img{
+    width: 100%;
+}
+
+
+
+.mission-vision-section{
+    padding: 70px 0;
+    position: relative;
+    z-index: -10;
+}
+.mission-img-column{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.mission-img-div,.vision-img-div{
+    width: 300px;
+    height:  300px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 10px solid white; */
+}
+.mission-img,.vision-img{
+    height: 100%;
+}
+
+.mission-content-column,.vision-content-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mission-content,.vision-content{
+    padding: 40px ;
+    color: white;
+    position: relative;
+}
+.mission-content::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120%;
+    height: 100%;
+    background: var(--Black);
+    border-radius: 0 120px 120px 0; 
+    z-index: -1;
+}
+.vision-content::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    background: var(--Black);
+    border-radius: 120px 0 0 120px; 
+    z-index: -1;
+}
+.mission-heading,.vision-heading{
+    margin-bottom: 20px;
+}
+
+
+.contact-section{
+    padding: 40px 0;
+    background: var(--Yellow);
+}
+.contact-us-btn{
+    padding: 15px 60px;
+    background: var(--Black);
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+<% if(chats.length >0){ %>
+    <% chats.forEach((chat)=>{ %>
+        <% if(chat.userName == user.name){ %>
+            <div class="my-chat-div">
+                <h5 class="my-chat-name">You</h5>
+                <p class="my-message"><%= chat.message %></p>
+            </div>
+        <%}else{                 %>
+            <div class="other-chat-div">
+                <h5 class="other-chat-name"><%= chat.userName %></h5>
+                <p class="other-message"><%= chat.message %></p>
+            </div>
+        <%}                        %>
+    <% })                                  %>
+<% }else{                       %>
+    <p id="default_chatroom_msg">you havent started any conversation yet</p>
+<%}                               %> 

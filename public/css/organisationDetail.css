@@ -1,0 +1,67 @@
+.organisation-detail-banner{
+    padding: 70px 0;
+    padding-top:  170px!important;
+    padding-top:  70px;
+    position: relative;
+    overflow: hidden;
+}
+.organisation-detail-banner::before{
+    content: url(../Images/SecondSlide.jpg);
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    right: -3%;
+    object-fit: cover;
+    object-position: center center;
+    filter: blur(3px) brightness(40%);
+}
+
+.yellow-square-shape{
+    width: 450px;
+    height: 500px;
+    background: var(--Yellow);
+    position: absolute;
+    top: -240px;
+    left: 0;
+    z-index: 100;
+}
+
+.org-logo-div{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.org-logo-img{
+    width: 100%;
+}
+.contact-org-btn{
+    margin-top: 40px;
+    width: 90%;
+    padding: 10px 30px;
+    background: var(--Black);
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.organisation-detail-section{
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+.org-gallery-section{
+    padding:70px 0;
+}
+.org-gallery-img-div{
+    height: 300px;
+    overflow: hidden;
+}
+.org-gallery-img{
+    max-height: 500px;
+    object-fit: cover;
+}

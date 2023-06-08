@@ -1,0 +1,66 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"",donateState:"",aboutState:"",user:user,renderLogout:renderLogout}) -%>
+        <%- include("partials/pageHeading", {pageHeading: "Contact Us"}) %> 
+        <section class="contact-top-section">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col-5 d-flex justify-content-end">
+                                <div class="call-img-div">
+                                    <img src="/Images/callus.png" alt="" class="call-img">
+                                </div>
+                            </div>
+                            <div class="col-7 p-3">
+                                <h3><i class="fa fa-phone"></i>&nbsp;Call Us</h3>
+                                <h6>+91-9775442811</h6>
+                                <h6>+91-8874422511</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col-5 d-flex justify-content-end">
+                                <div class="call-img-div">
+                                    <img src="/Images/address.png" alt="" class="address-img">
+                                </div>
+                            </div>
+                            <div class="col-7 pt-3">
+                                <h3><i class="fa fa-map-marker"></i>&nbsp;Address</h3>
+                                <h6>CU Campus,</h6>
+                                <h6>Gharuan, Punjab</h6>
+                                <h6>140413</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-form-section">
+            <div class="container">
+                <h1 class="text-center mb-5">WRITE TO US</h1>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-8 write-article-column">
+                        <form action="/contact" method="POST" id="contact-us-form">
+                            <div class="form-group">
+                                <label  for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name"  placeholder="Enter your name....">
+                              </div>
+                              <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email...">
+                              </div>
+                              <div class="form-group full-label">
+                                <label for="query">Write your query</label>
+                                <textarea type="text" rows="10" class="form-control" id="query" name="query" placeholder="Write here......."></textarea>
+                              </div>
+                              <div class="sign-in-btn-div text-center">
+                                <button type="submit" class="publish-btn">Send</button>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+<%- include("partials/footer") %>
+     

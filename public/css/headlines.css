@@ -1,0 +1,78 @@
+/* -------------------------------------  Headlines section ----------------------------------- */
+.headline-section{
+    padding: 70px 0;
+    position: relative;
+    height: calc(100vh - 80px);
+    overflow:hidden;
+}
+.headline-section::before{
+    content: url("../Images/FourthSlide.jpg");
+    height: 100%;
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    object-fit: cover;
+    filter: blur(3px) brightness(40%);
+
+
+}
+.carousel-inner{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.headline-section-heading{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    position: relative;
+    color: white;
+}
+
+
+.headline-content-column{
+    padding: 40px 30px!important;
+}
+.headline-content{
+    padding: 20px 0;
+    color: white;
+}
+
+.headline-img-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headline-img-div{
+    width: 100%;
+    height: 260px;
+    border: 3px solid var(--Yellow);
+    outline: 1px solid white;
+    outline-offset: 10px;
+    overflow: hidden;
+    transition: 0.7s all ease;
+}
+.headline-img-div:hover{
+    outline: 1px solid white;
+    outline-offset: -10px;
+}
+.headline-img-div:hover img{
+    transform: scale(1.05);
+}
+.headline-img{
+    height: 100%;
+    transition: 0.5s all ease;
+    object-position: center center;
+}
+.headline-heading{
+    font-size: 2.6rem;
+    color: white;
+}
+.read-more-btn{
+    padding: 10px 30px;
+    background: var(--Green);
+    width: 150px;
+}
+.read-more-btn a{
+    color: white;
+}

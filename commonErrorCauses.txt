@@ -1,0 +1,7 @@
+1. If uploads folder is completely empty while deploying. it shows Internal Server Error
+2. If user have '?' in article title string. then it will give 404 error. because it acts as a query string so it doesnt count it.... thats why for the time being i am passing article id in req.params
+3.sometimes while defining dynamic routes in get and post method if two routes are like this
+        app.post("/articles/:articleId/:userId,())
+        app.post("/articles/delete/:articleId,())
+        in this case it will always execute that post route which you have defined first and second will never get executed
+        because first route will think that variable articleId=delete of second route

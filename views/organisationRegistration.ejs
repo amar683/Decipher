@@ -1,0 +1,43 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"",donateState:"active-item",aboutState:"",user:"",renderLogout:false}) -%>
+    <%- include("partials/pageHeading", {pageHeading: "Organisation Registration"}) -%>
+    <section class="organisation-registration-section">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 organisation-registration-column">
+                    <form action="/register-organisation" method="POST" enctype="multipart/form-data" id="organisation_registration_form">
+                        <div class="form-group">
+                            <label  for="org-name">Organisation Name</label>
+                            <input type="text" class="form-control" id="org-name" name="org_name"  placeholder="Enter organisation name">
+                          </div>
+                          <div class="form-group">
+                            <label for="org-logo">Organisation Logo</label>
+                            <input type="file" class="form-control" id="orgLogo" name="orgLogo" placeholder="Upload photo">
+                          </div>
+                          <div class="form-group">
+                            <label for="org-email">Email Id</label>
+                            <input type="email" class="form-control" id="org-email" name="org_email" placeholder="Enter email id">
+                          </div>
+                          <div class="form-group">
+                            <label for="contact-no">Contact No.</label>
+                            <input type="text" class="form-control" id="contact-no" name="org_contact" placeholder="Enter contact no.">
+                          </div>
+                          <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="text" class="form-control" id="website" name="org_website" placeholder="Enter website url...">
+                          </div>
+                          <div class="form-group full-label">
+                            <label for="org-cause">What does your organisation do ?</label>
+                            <textarea type="text" rows="8" class="form-control" id="org-cause" name="org_cause" placeholder="Write here......."></textarea>
+                          </div>
+                          <div class="sign-in-btn-div text-center">
+                            <button type="submit" class="register-btn">Register</button>
+                          </div>
+                    </form>
+                    <!-- <h6 class="text-center mt-2">OR</h6>
+                    <h6 class="text-center mt-2">Already have an account ? <a class="sign-in-link" href="/sign-in">Sign In</a></h6> -->
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include("partials/footer") -%>

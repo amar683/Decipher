@@ -1,0 +1,64 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"",donateState:"",aboutState:"active-item",user:user,renderLogout:renderLogout}) -%>
+    <%- include("partials/pageHeading",{pageHeading: "About Us"}) -%>  <!-- pass the props here -->
+    <section class="about-us-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 about-us-column">
+                    <h2 class="about-us-heading">What we do ?</h2>
+                    <p>At Decipher, our aim is to provide a true opinion platform to the people. Where people can easily exchange their views on any topic. As the emergence of the digital age, more and more people are now on the internet, this has lead to increase in fake news, biasedness, so our aim in Decipher is to counter fake news and let the user decide on the basis of his/her readings what is right.
+                    </p>
+                </div>
+                <div class="col-6 about-us-img-column">
+                    <div class="about-us-img-div">
+                        <img class="about-us-img" src="Images/aboutus.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mission-vision-section">
+        <div class="container mission-container">
+            <div class="row justify-content-center">
+                <div class="col-4 mission-img-column">
+                    <div class="mission-img-div">
+                        <img src="Images/mission.jpg" alt="" class="mission-img">
+                    </div>
+                </div>
+                <div class="col-6 mission-content-column">
+                    <div class="mission-content pl-0">
+                        <h3 class="mission-heading">Our Mission</h3>
+                        <p>Our mission is to spread awareness, encourage exchange of ideas, views between individuals by enabling users by giving them the much needed platform, as now-a-days a platform where one can express themselves freely are limited.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container vision-container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-6 vision-content-column">
+                    <div class="vision-content pr-0 text-right">
+                        <h3 class="vision-heading">Our Vision</h3>
+                        <p>In future we see Decipher as the major platform, where people will be discussing their thoughts, ideas with everyone and also respecting the feelings of the other person.</p>
+                    </div>
+                </div>
+                <div class="col-4 vision-img-column">
+                    <div class="vision-img-div">
+                        <img src="Images/vision.jpg" alt="" class="vision-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <h4 style="font-weight: 400; margin:0;">Have something in mind ? We are available 24 X 7 to answer all your <span style="font-weight: 700;"style="font-weight: 700;">queries</span> </h4>
+                </div>
+                <div class="col-3">
+                    <a href="/contact"><button class="contact-us-btn">Contact Us</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include("partials/footer") -%>

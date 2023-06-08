@@ -1,0 +1,66 @@
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 logo-column">
+                <div class="logo-div">
+                    <div class="ham-burger-wrap">
+                        <div class="ham-burger">
+                            <div class="line1"></div>
+                            <div class="line2"></div>
+                            <div class="line3"></div>
+                        </div> 
+                    </div> 
+                    <a href="/"><img class="logo" src="/Icons/LogoText.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-9 nav-column">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item <%= homestate %>"><a class="nav-link" href="/">Home</a></li>
+                          <li class="nav-item <%= articleState %>"><a class="nav-link"  href="/#articles">Article</a></li>
+                          <li class="nav-item <%= donateState %>"><a class="nav-link" href="/donate">Donate</a></li>
+                          <li class="nav-item <%= aboutState %>"><a class="nav-link" href="/about-us">About</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <div class="profile-img-div">
+              <%if(user){                                %>
+                    <img src="data:user/<%=user.image.contentType%>;base64,<%=user.image.img.toString('base64')%> " class="profile-img" alt="">
+               <%}else{                                  %>
+                    <img src="/Images/vision.jpg" class="profile-img" alt="">
+                <%}                                       %>
+            </div>
+            <h5 class="sidebar-user-name">Hi, <%= user.name || "Noob" %></h5>
+        <%  if(renderLogout){                             %>
+                <a href="/sign-out"><button class="sidebar-sign-in-btn">SIGN OUT</button></a>
+                <a href="/connections"><button class="connections-btn mt-5"><i class="fa fa-user"></i>  Connections</button></a>
+        <%  }else{                                        %>                                   
+                <a href="/sign-in"><button class="sidebar-sign-in-btn">SIGN IN</button></a>
+        <%  }                                             %>
+    
+            <div class="news-category-container">
+                <h3 class="news-category-heading">CATEGORY</h3>
+                <% let categories = ["Recent","Sports","Entertainment","National","International"]%>
+                <ul>
+                    <% categories.forEach((category)=>{ %>
+                        <% if(category === "Recent"){ %>
+                            <li><form action="/" method="GET"><button type="submit" class="news-category-btn"><%= category %></button></form></li>
+                        <% }else{    %>
+                            <li><form action="/category/<%= category %>" method="POST"><button type="submit" class="news-category-btn"><%= category %></button></form></li> 
+                        <%} %>
+                        
+                    <%}) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</header> 

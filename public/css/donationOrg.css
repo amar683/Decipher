@@ -1,0 +1,19 @@
+.org-reg-section{
+    padding-top: 40px;
+}
+.org-reg-btn{
+    padding: 10px 30px;
+    background: var(--Yellow);
+    width: fit-content;
+    font-weight: 500;
+    cursor: pointer;
+}
+.org-list-section{
+    padding: 40px 0;
+}
+.org-row{
+    padding: 30px 0;
+}
+.org-logo{
+    width: 100%;
+}

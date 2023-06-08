@@ -1,0 +1,221 @@
+/* ----------------------------------------------   Header  -------------------------------------------------- */
+
+header{
+    background: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 -8px 14px 0;
+}
+
+.logo-column{
+    padding: 10px;
+    padding-right: 0!important;
+}
+.logo-column::before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: var(--Green);
+    z-index: -1;
+}
+.logo-column::after{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    border-top: 98px solid var(--Green);
+    border-right: 130px solid transparent;
+}
+.logo-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.ham-burger-wrap{
+    position: absolute;
+    top: 37%;
+    left: -70%;
+    z-index: 22;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.ham-burger div{
+    width: 25px;
+    height: 2px;
+    margin: 6px;
+    background: white;
+}
+.logo{
+    width: 200px;
+}
+
+
+/* ----------------------------------------   Navbar  ----------------------------------------- */
+.nav-column{
+    padding-left: 0!important;
+    display: flex;
+    align-items: center;
+    
+}
+.navbar{
+    padding: 0!important;
+    margin-left: auto;
+}
+.navbar::before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.navbar-nav{
+    margin-left: auto;
+}
+.nav-item{
+    transition: 0.3s all ease;
+    position: relative;
+}
+.nav-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--Black);
+    transition: 0.3s all ease;
+    z-index: -1;
+}
+.nav-item:hover::before{
+    width: 100%;
+}
+
+.nav-item.active-item::before{
+    width: 100%;
+}
+.nav-item.active-item .nav-link{
+    color: var(--Yellow)!important;
+}
+.nav-link{
+    color: var(--Black)!important;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem 1rem!important;
+    transition: 0.8s all ease;
+    font-size: 1.05rem;
+}
+.nav-item:hover .nav-link{
+    color: var(--Yellow)!important;
+    font-weight: 600;
+}
+
+
+
+
+/* ---------------------------------------  Sidebar ------------------------------------------- */
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 98px);
+    top: 98px;
+    left: 0;
+    background: rgba(31, 30, 30, 0.5);
+    display: none; 
+    transition: 0.3s ease-out;
+    z-index: 980;
+}
+.overlay.appear{
+    display: block;
+}
+
+.sidebar{
+    position: absolute;
+    top: 98px;
+    left: -100%;
+    background: var(--Black);
+    width: 476px;
+    height: calc(100vh - 98px);
+    transition: 0.5s all ease;
+    overflow:hidden;
+    z-index: 990;
+}
+.sidebar.open{
+    left: 0;
+}
+.sidebar::before{
+    content: "";
+    width: 476px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 329px solid var(--Green);
+    border-right: 477px solid transparent;
+
+}
+
+.sidebar-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    z-index: 1000;
+}
+.sidebar-user-name{
+    color: white;
+    margin: 30px 0;
+}
+.sidebar-sign-in-btn{
+    padding: 10px 80px;
+    border: 1px solid #C4C4C4;
+    border-radius: 50px;
+    transition: 0.3s all ease;
+    color: #C4C4C4;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+  
+.sidebar-sign-in-btn:hover{
+    border-color: white;
+    color: white;
+}
+
+.news-category-heading{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #C4C4C4;
+}
+
+.news-category-btn{
+    color: #C4C4C4;
+}
+.news-category-btn:hover{
+    color: white;
+}
+.connections-btn{
+    color: var(--Grey);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+.connections-btn:hover{
+    color: white;
+}

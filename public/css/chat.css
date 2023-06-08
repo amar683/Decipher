@@ -1,0 +1,44 @@
+.chat-heading-section{
+    background: var(--Yellow);
+    padding: 15px 0;
+}
+.chat-name-heading{
+    font-weight: 600;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--Black);
+}
+.my-chat-div{
+    margin-left: auto;
+    width: fit-content;
+}
+.other-chat-div{
+    margin-right: auto;
+    width: fit-content;
+}
+.my-chat-name{
+    font-weight: 600;
+    color: var(--Green);
+}
+.other-chat-name{
+    font-weight: 600;
+    color: var(--Black);
+}
+.my-message{
+    background: var(--Grey);
+    padding: 20px;
+    border-radius: 20px;
+}
+.other-message{
+    background: var(--Black);
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+}
+.send-message-btn{
+    height: calc(2.25rem + 2px);
+    color: white;
+    width: 200px;
+    background: var(--Green);
+    cursor: pointer;
+}

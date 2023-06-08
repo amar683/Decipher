@@ -1,0 +1,78 @@
+<%- include("partials/header") -%>
+    <%- include("partials/navbar_sidebar",{homestate:"active-item",articleState:"",donateState:"",aboutState:"",user:user,renderLogout:renderLogout}) -%>
+    <%- include("partials/pageHeading",{pageHeading:"Connections"}) -%>
+    <section class="connections-section">
+        <div class="container">
+            <h2 class="mb-4">Connected</h2>
+            <% if(connections.connection==0){       %>
+                <p>You dont have any connections yet.</p>
+            <% }                                      %>
+            <% connections.connection.forEach((req)=>{    %>
+                <div class="row mb-3">
+                    <div class="col-2">
+                        <div class="profile-img-div">
+                            <img class="profile-img"  src="data:req/<%=req.image.contentType%>;base64,<%=req.image.img.toString('base64')%>" alt="Profile-Pic">
+                        </div>
+                    </div>
+                    <div class="col-6"> 
+                        <h4><%= req.userName %></h4>
+                        <form action="/connections/remove/<%= req.userId %>" method="POST">
+                            <button class="yellow-btn" type="submit">Remove</button>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                        <h4 class="text-white">...</h4>
+                        <form action="/connections/chat/<%= req.userId %>" method="GET">
+                            <button class="chat-btn" type="submit"><i class="fa fa-wechat"></i> Chat</button>
+                        </form>
+                    </div>
+                </div>
+            <% });                                %>
+            <hr>
+            <h2 class="mb-4 mt-4">Recieved Request</h2>
+            <% if(connections.recievedReq==0){       %>
+                <p>There are no recieved request  pending currently.</p>
+            <% }                                       %>
+            <% connections.recievedReq.forEach((req)=>{    %>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="profile-img-div">
+                            <img class="profile-img"  src="data:req/<%=req.image.contentType%>;base64,<%=req.image.img.toString('base64')%>" alt="Profile-Pic">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h4><%= req.userName %></h4>
+                        <div class="d-flex">
+                            <form action="/connections/accept/<%= req.userId %>" method="POST">
+                                <button class="green-btn" type="submit">Accept</button>
+                            </form>
+                            <form action="/connections/reject/<%= req.userId %>" method="POST">
+                                <button class="yellow-btn ml-4" type="submit">Reject</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            <% });                                     %>
+            <hr>
+            <h2 class="mb-4 mt-4">Sent Request</h2>
+            <% if(connections.sentReq==0){       %>
+                <p>You haven't send any request recently.</p>
+            <% }                                       %>
+            <% connections.sentReq.forEach((req)=>{    %>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="profile-img-div">
+                            <img class="profile-img"  src="data:req/<%=req.image.contentType%>;base64,<%=req.image.img.toString('base64')%>" alt="Profile-Pic">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h4><%= req.userName %></h4>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            <% });                                         %>  
+        </div>                  
+    </section>
+<%- include("partials/footer") %>
+

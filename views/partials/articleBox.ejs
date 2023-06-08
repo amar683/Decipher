@@ -1,0 +1,97 @@
+<section class="article-section" id="articles">
+    <div class="container">
+        <h3 class="article-section-heading">Articles</h3>
+        <div class="article-container">
+            
+        <%  for(let i=articles.length-1;i>=0;i=i-1){ %>
+        <%      const article = articles[i];         %>
+        <%      if(i%2==0){                           %>
+        <%        let d = new Date(article.time);         %>
+        <%        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "Sep", "Oct", "November", "December"];  %>
+                    <div class="row article-row">
+                        <div class="col-4 article-img-column ">
+                            <div class="article-img-div">
+                                <img class="article-img" src="data:article/<%=article.image.contentType%>;base64,<%=article.image.img.toString('base64')%>" alt="">
+                                <div class="date-box1">
+                                    <div class="row m-0">
+                                        <div class="col-4 p-0">
+                                            <h1 class="date-txt"><%= d.getDate() %></h1>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="">
+                                                <h5 class="month-txt"><%= months[d.getMonth()] %></h5>
+                                                <p class="year-txt"><%= d.getFullYear() %></p>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 article-content-column">
+                            <div class="article-content">
+                                <h1 class="article-heading wow fadeInDown" data-wow-duration="4s"><%= article.title %></h1>
+                                <div class="article-para">
+                                    <p style="white-space: pre-wrap;"><%= article.content.substring(0,700); %>. . . . .</p>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <button class="read-more-btn"><a href="/articles/<%= article._id %>">Read More</a></button>
+                                            <button class="discuss-btn"><a href="/articles/<%= article._id %>#discussion">Discuss</a></button>
+                                        </div>
+                                        <%if(user && user._id == article.userId){         %>
+                                            <form action="/articles/to/delete/<%= article._id %>" method="POST">
+                                                <button class="delete-article-btn" type="submit"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        <%}                                                %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <%      }else{                            %>
+            <%        let d = new Date(article.time);         %>
+            <%        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "Sep", "Oct", "November", "December"];  %>
+                    <div class="row article-row">
+                        <div class="col-8 article-img-column">
+                            <div class="article-content">
+                                <h1 class="article-heading"><%= article.title %></h1>
+                                <div class="article-para">
+                                    <p style="white-space: pre-wrap;"><%= article.content.substring(0,700); %>. . . . .</p>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <button class="read-more-btn"><a href="/articles/<%= article._id %>">Read More</a></button>
+                                            <button class="discuss-btn"><a href="/articles/<%= article._id %>#discussion">Discuss</a></button>
+                                        </div>
+                                        <%if(user && user._id == article.userId){         %>
+                                            <form action="/articles/to/delete/<%= article._id %>" method="POST">
+                                                <button class="delete-article-btn" type="submit"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        <%}                                                %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 article-content-column">
+                            <div class="article-img-div">
+                                <img class="article-img" src="data:article/<%=article.image.contentType%>;base64,<%=article.image.img.toString('base64')%>" alt="">
+                                <div class="date-box2">
+                                    <div class="row m-0">
+                                        <div class="col-4 p-0">
+                                            <h1 class="date-txt"><%= d.getDate() %></h1>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="">
+                                                <h5 class="month-txt"><%= months[d.getMonth()] %></h5>
+                                                <p class="year-txt"><%= d.getFullYear() %></p>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <%      }                              %> 
+        <%  }                                  %>
+
+        </div>
+    </div>
+</section>

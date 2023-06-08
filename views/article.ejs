@@ -1,0 +1,53 @@
+<%- include("partials/header") %>
+    <%- include("partials/navbar_sidebar",{homestate:"",articleState:"active-item",donateState:"",aboutState:"",user:user,renderLogout:renderLogout}) -%>
+    <%- include("partials/pageHeading",{pageHeading: "Article"}) -%>
+    <section class="single-article-section">
+        <div class="container">
+            <h1 class="single-article-heading"><%= article.title %></h1>
+            <h4 class="single-article-author">By <%= article.author %></h4>
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                    <div class="single-article-img-div">
+                        <img src="data:article/<%=article.image.contentType%>;base64,<%=article.image.img.toString('base64')%>" alt="" class="single-article-img">
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-10 single-article-content-column">
+                    <p class="single-article-para" style="white-space: pre-wrap;"><%= article.content %></p>
+                    <div class="d-flex justify-content-center">
+                        <a href=""><button class="donate-btn">Donate to a cause</button></a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+    <section class="discussion-section" id="discussion">
+        <div class="container">
+            <h1 class="discussion-heading">Discussions</h1>
+            <div class="row d-flex justify-content-center">
+                <div class="col-2 d-flex justify-content-end">
+                    <div class="profile-img-div">
+                        <%if(user){                       %>
+                            <img src="data:user/<%=user.image.contentType%>;base64,<%=user.image.img.toString('base64')%>" alt="" class="profile-img">
+                        <%}else{                             %>  
+                            <img src="/Images/vision.jpg" alt="" class="profile-img">
+                        <%}                                   %>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h6 class="user-name"><%= user.name || "Noob" %></h6>
+                    <div class="comment-div">
+                        <form action="/articles/<%= article._id %>/<%= user._id %>" method="POST">
+                            <div class="form-group">
+                                <textarea class="comment-box" name="comment" id="comment" rows="1" placeholder="  Start a discussion....."></textarea>
+                            </div>
+                            <button type="submit" class="post-comment-btn">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <%- include("partials/comments",{allComments:allComments,allReplies:allReplies})%>
+        </div>
+    </section>
+<%- include("partials/footer")-%>

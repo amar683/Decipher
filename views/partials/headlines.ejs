@@ -1,0 +1,53 @@
+<section class="headline-section">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="container headline-container">
+            <h3 class="headline-section-heading" >Headlines</h3>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="headline-content">
+                        <div class="row">
+                            <div class="col-4 headline-img-column">
+                                <div class="headline-img-div">
+                                    <img class="headline-img" src= "<%= headlines.articles[0].urlToImage %>" alt="">
+                                </div>
+                            </div>
+                            <div class="col-8 headline-content-column">
+                                <h1 class="headline-heading"> <%= headlines.articles[0].title %></h1>
+                                <p class="headline-para"><%= headlines.articles[0].description %></p>
+                                <button class="read-more-btn"><a href="<%= headlines.articles[0].url %>">Read More</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <% headlines.articles.forEach((article,i)=>{           %>
+              <%    if(i>0){                                        %>
+                        <div class="carousel-item">
+                            <div class="headline-content">
+                                <div class="row">
+                                    <div class="col-4 headline-img-column">
+                                        <div class="headline-img-div">
+                                            <img class="headline-img" src= "<%= article.urlToImage %>" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-8 headline-content-column">
+                                        <h1 class="headline-heading"> <%= article.title %></h1>
+                                        <p class="headline-para"><%= article.description %></p>
+                                        <button class="read-more-btn" target="_blank"><a href="<%= article.url %>" target="_blank">Read More</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                <%  }                                                 %>
+            <%  });                                              %>
+            </div>    
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</section> 

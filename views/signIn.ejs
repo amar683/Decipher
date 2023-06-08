@@ -1,0 +1,43 @@
+<%- include("partials/header")-%>
+    <section class="sign-in-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 circle-logo-column">
+                    <div class="circle-logo-container">
+                        <img class="circle-logo" src="Icons/circleLogo.png" alt="">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="si-nav-container">
+                        <nav>
+                            <ul class="si-nav">
+                                <li class="si-nav-item"><a class="si-nav-link" href="/">Home</a></li>
+                                <li class="si-nav-item"><a class="si-nav-link"  href="/#articles">Article</a></li>
+                                <li class="si-nav-item"><a class="si-nav-link" href="/donate">Donate</a></li>
+                                <li class="si-nav-item"><a class="si-nav-link" href="/about-us">About</a></li>
+                              </ul>
+                        </nav>
+                    </div>
+                    <div class="sign-in-form">
+                        <h3 class="sign-in-heading">Sign In</h3>
+                        <form action="/sign-in" method="POST" id="sign_in_form">
+                            <div class="form-group">
+                                <label  for="email">Email address</label>
+                                <input type="email" class="form-control" id="sign-in-email"  name="sign_in_email" aria-describedby="email" placeholder="Enter email">
+                              </div>
+                              <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="sign-in-password" name="sign_in_password" placeholder="Password">
+                              </div>
+                              <div class="sign-in-btn-div text-center">
+                                <button type="submit" class="sign-in-btn">Sign In</button>
+                              </div>
+                        </form>
+                        <h6 class="text-center mt-2">OR</h6>
+                        <h6 class="text-center mt-2">Create a new account ? <a class="register-link" href="/register-user">Register Now</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include("partials/footer")-%>

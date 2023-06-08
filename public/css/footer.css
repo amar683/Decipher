@@ -1,0 +1,42 @@
+.footer{
+    background: #0F996D;
+    padding: 30px 0;
+    position: relative;
+    z-index: 980;
+}
+.footer-heading{
+    margin-bottom: 30px;
+    color: White;
+    text-align: center;
+}
+.footer-about-para{
+    color: white;
+    text-align: center;
+}
+.footer-nav-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.footer-nav-link{
+    color: white;
+}
+.footer-logo-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-logo{
+    width: 200px;
+}
+.footer-hr{
+    background: white;
+}
+.copyright-line{
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+}
